@@ -24,10 +24,13 @@ unsetopt correctall
 PATH=/usr/local/bin:/usr/local/sbin:/sbin:/usr/sbin:/bin:/usr/bin
 
 # Setting up Golang environment variables
-export GOPATH=$HOME/golang
+/Users/rsalazar/Development
+export GOPATH=$HOME/Development/golang
 export GOROOT=/usr/local/opt/go/libexec
 export GOBIN=$GOPATH/bin
 
+# Setting up pyenv environment variables
+export PYENV_ROOT=/usr/local/var/pyenv
 
 # Conditional PATH additions
 for path_candidate in /opt/local/sbin \
@@ -39,7 +42,8 @@ for path_candidate in /opt/local/sbin \
   ~/.rbenv/bin \
   ~/bin \
   $GOPATH \
-  $GOROOT/bin
+  $GOROOT/bin \
+  $PYENV_ROOT/bin \
 do
   if [ -d ${path_candidate} ]; then
     export PATH=${PATH}:${path_candidate}
@@ -159,6 +163,9 @@ if [ -d /Library/Java/Home ];then
   export JAVA_HOME=/Library/Java/Home
 fi
 
+# PYENV setup 
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 # Setup jenv to manage JAVA enviroments
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"

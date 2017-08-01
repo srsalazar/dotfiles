@@ -24,7 +24,6 @@ unsetopt correctall
 PATH=/usr/local/bin:/usr/local/sbin:/sbin:/usr/sbin:/bin:/usr/bin
 
 # Setting up Golang environment variables
-/Users/rsalazar/Development
 export GOPATH=$HOME/Development/golang
 export GOROOT=/usr/local/opt/go/libexec
 export GOBIN=$GOPATH/bin
@@ -43,7 +42,7 @@ for path_candidate in /opt/local/sbin \
   ~/bin \
   $GOPATH \
   $GOROOT/bin \
-  $PYENV_ROOT/bin \
+  $PYENV_ROOT/bin
 do
   if [ -d ${path_candidate} ]; then
     export PATH=${PATH}:${path_candidate}
@@ -163,7 +162,7 @@ if [ -d /Library/Java/Home ];then
   export JAVA_HOME=/Library/Java/Home
 fi
 
-# PYENV setup 
+# PYENV setup
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 # Setup jenv to manage JAVA enviroments
@@ -335,5 +334,3 @@ unsetopt beep
 
 # Completions
 fpath=(/usr/local/share/zsh-completions $fpath)
-
-

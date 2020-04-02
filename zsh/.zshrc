@@ -39,6 +39,7 @@ export PYENV_ROOT=/usr/local/var/pyenv
 
 # Setting up rbenv environment variables
 eval "$(rbenv init -)"
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 # Conditional PATH additions
 for path_candidate in /opt/local/sbin \

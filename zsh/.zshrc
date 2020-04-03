@@ -35,7 +35,8 @@ export GOROOT=/usr/local/opt/go/libexec
 export GOBIN=$GOPATH/bin
 
 # Setting up pyenv environment variables
-export PYENV_ROOT=/usr/local/var/pyenv
+#OLD Configuratin: export PYENV_ROOT=/usr/local/var/pyenv
+export PYENV_ROOT=$HOME/.pyenv
 
 # Setting up rbenv environment variables
 eval "$(rbenv init -)"
